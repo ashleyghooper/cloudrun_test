@@ -72,8 +72,10 @@ $ curl http://localhost:3000/
 1. Deploy the images to Cloud Run:
 
     ```bash
-    gcloud run deploy backend --image gcr.io/$PROJECT_ID/backend --platform managed
-    gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend --platform managed
+    gcloud run deploy backend --image gcr.io/$PROJECT_ID/backend \
+    --platform managed --port 5000
+    gcloud run deploy frontend --image gcr.io/$PROJECT_ID/frontend \
+    --platform managed --port 3000
     ```
 
 This will create two Cloud Run services, one for the backend and one for the
